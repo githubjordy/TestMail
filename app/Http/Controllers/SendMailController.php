@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Contact;
+use App\Mail\ContactMe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SendMailController extends Controller
 {
@@ -25,9 +28,15 @@ class SendMailController extends Controller
 
     public function store(Request $request)
     {
+
+
+        $request->validate(['email'=> 'required|email']);      
+        Mail::to($request->input('email'))
+        ->send(new Contact());
+
         dd($request);
 
-        return view('SendMail.index');
+        return redirect('/SendMail.index')->with('message','email sent!');
 
     }
 
