@@ -22,12 +22,15 @@ class SendMailController extends Controller
      */
 
      public function index(){
+        
 
-        $header = array();
+        //json_encode( array( "customer"=> $data ) );
+        //$payload = json_encode( array( "customer"=> $data ) );
+        //$header = array();
         //$header[] = 'Content-length: 0';
         //$header[] = 'Content-type: application/json';
         //$header[] = 'bearer dfsdfjdslkfjdslfdjflkdsf';
-        $authorization = "Authorization: Bearer 080042cad6356ad5dc0a720c18b53b8e53d4c274";
+       // $authorization = "Authorization: Bearer 080042cad6356ad5dc0a720c18b53b8e53d4c274";
 
         //curl_setopt($crl, CURLOPT_HTTPHEADER,array('Content-Type: application/json' , $authorization ));
 
